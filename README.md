@@ -1,2 +1,2 @@
 # Contribution-Generator
-This REPO help you to light-up your timeline! Meant for irony and deconstructionism.
+This REPO helped you lighting-up your timeline/green wall. Meant for irony and deconstructionism.
