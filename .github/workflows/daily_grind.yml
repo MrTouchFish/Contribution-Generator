@@ -1,0 +1,29 @@
+name: Automated Sincerity Performance
+
+on:
+  schedule:
+    - cron: '30 13 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Run script
+        run: python perform_sincerity.py
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action [Automated Student]"
+          git add GRIND_LOG.md
+          git commit -m "chore: achieve another day of excellence via automation"
+          git push
